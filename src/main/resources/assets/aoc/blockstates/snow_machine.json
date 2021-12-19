@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "snow_layer=0": {
+      "model": "aoc:block/snow_machine0"
+    },
+    "snow_layer=1": {
+      "model": "minecraft:block/snow_machine1"
+    },
+    "snow_layer=2": {
+      "model": "minecraft:block/snow_machine2"
+    }
+  }
+}

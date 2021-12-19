@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cookie",
+    "minecraft:coal",
+    "minecraft:snowball",
+    "minecraft:bricks",
+    "minecraft:red_concrete",
+    "minecraft:white_concrete",
+    "minecraft:green_concrete",
+    "minecraft:red_wool",
+    "minecraft:white_wool",
+    "minecraft:green_wool"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aoc:block/present_pile"
+      }
+    ]
+  }
+}

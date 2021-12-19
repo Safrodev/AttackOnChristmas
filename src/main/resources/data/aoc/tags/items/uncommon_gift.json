@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:pumpkin_pie",
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:redstone",
+    "minecraft:coal_block",
+    "minecraft:brewing_stand",
+    "minecraft:shield",
+    "minecraft:crossbow",
+    "minecraft:water_bucket"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:diamond",
+    "minecraft:emerald",
+    "minecraft:iron_block",
+    "minecraft:name_tag",
+    "minecraft:saddle",
+    "minecraft:golden_apple",
+    "minecraft:music_disc_otherside"
+  ]
+}

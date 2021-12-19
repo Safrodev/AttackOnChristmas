@@ -1,0 +1,15 @@
+{
+  "itemGroup.aoc.aoc": "Attack On Christmas",
+  "text.aoc.christmas_gift": "Merry Christmas! Here's a gift for you!",
+
+  "entity.aoc.evil_elf": "Evil Elf",
+  "entity.aoc.evil_elf_brute": "Evil Elf Brute",
+  "entity.aoc.elvish_bat": "Elvish Bat",
+
+  "item.aoc.green_gift": "Green Gift",
+  "item.aoc.blue_gift": "Blue Gift",
+  "item.aoc.red_gift": "Red Gift",
+
+  "block.aoc.snow_machine": "Snow Machine",
+  "block.aoc.present_pile": "Present Pile"
+}

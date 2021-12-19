@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "safro.attack.on.christmas.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+    "ClientPlayerEntityMixin",
+    "ServerWorldMixin",
+    "SnowballEntityMixin",
+    "DefaultBiomeFeaturesMixin",
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
