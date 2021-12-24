@@ -26,15 +26,18 @@ public class PresentPileBlock extends Block {
     }
 
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (receivingPlayer != null && receivingPlayer == player) {
-            Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.GREEN_GIFT));
-            Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.RED_GIFT));
-            Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.BLUE_GIFT));
-            world.setBlockState(pos, Blocks.AIR.getDefaultState());
-            return ActionResult.SUCCESS;
-        } else {
-            player.sendMessage(new LiteralText("You have not earned this gift!").formatted(Formatting.RED), true);
-            return ActionResult.PASS;
+        if (!world.isClient) {
+            if (receivingPlayer != null && receivingPlayer == player) {
+                Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.GREEN_GIFT));
+                Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.RED_GIFT));
+                Block.dropStack(world, pos, new ItemStack(ObjectsRegistry.BLUE_GIFT));
+                world.setBlockState(pos, Blocks.AIR.getDefaultState());
+                return ActionResult.SUCCESS;
+            } else {
+                player.sendMessage(new LiteralText("You have not earned this gift!").formatted(Formatting.RED), true);
+                return ActionResult.PASS;
+            }
         }
+        return ActionResult.FAIL;
     }
 }

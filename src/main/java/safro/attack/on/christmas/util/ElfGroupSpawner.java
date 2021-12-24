@@ -7,14 +7,17 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.SpawnHelper;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.Spawner;
 import safro.attack.on.christmas.entity.EvilElfBruteEntity;
 import safro.attack.on.christmas.entity.EvilElfEntity;
+import safro.attack.on.christmas.entity.RaiderElfEntity;
 import safro.attack.on.christmas.registry.EntityRegistry;
 
+import java.util.List;
 import java.util.Random;
 
 public class ElfGroupSpawner implements Spawner {
@@ -96,6 +99,8 @@ public class ElfGroupSpawner implements Spawner {
                 return false;
             } else if (!EvilElfBruteEntity.canMobSpawn(EntityRegistry.EVIL_ELF_BRUTE, world, SpawnReason.PATROL, pos, random)) {
                 return false;
+            } else if (world.getNonSpectatingEntities(EvilElfBruteEntity.class, (new Box(pos)).expand(48.0D, 8.0D, 48.0D)).size() > 1) {
+                return false;
             } else {
                 EvilElfBruteEntity patrolEntity = EntityRegistry.EVIL_ELF_BRUTE.create(world);
                 if (patrolEntity != null) {
@@ -109,6 +114,8 @@ public class ElfGroupSpawner implements Spawner {
                 }
             }
         } else if (!SpawnHelper.isClearForSpawn(world, pos, blockState, blockState.getFluidState(), EntityRegistry.EVIL_ELF)) {
+            return false;
+        } else if (world.getNonSpectatingEntities(EvilElfEntity.class, (new Box(pos)).expand(448.0D, 8.0D, 448.0D)).size() > 4) {
             return false;
         } else {
             EvilElfEntity patrolEntity = EntityRegistry.EVIL_ELF.create(world);
